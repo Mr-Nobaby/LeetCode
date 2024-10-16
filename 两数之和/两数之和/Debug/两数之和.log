@@ -1,3 +1,5 @@
 ﻿  test.cpp
-C:\Users\Administrator\Desktop\LeetCode\两数之和\src\test.cpp(49,23): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Administrator\Desktop\LeetCode\两数之和\src\test.cpp(47,27): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Administrator\Desktop\LeetCode\两数之和\src\test.cpp(52,27): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Administrator\Desktop\LeetCode\两数之和\src\test.cpp(76,23): warning C4018: “<”: 有符号/无符号不匹配
   两数之和.vcxproj -> C:\Users\Administrator\Desktop\LeetCode\两数之和\Debug\两数之和.exe

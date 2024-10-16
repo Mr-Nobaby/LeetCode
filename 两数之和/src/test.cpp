@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <unordered_map>
 
 using namespace std;
 // @before-stub-for-debug-end
@@ -12,31 +13,57 @@ using namespace std;
  */
 
  // @lc code=start
+//暴力查找
 class Solution {
 public:
+    //暴力查找
+    //vector<int> twoSum(vector<int>& nums, int target)
+    //{
+    //    // std::cout<<"mdl"<<std::endl;
+    //    vector<int> result(2);
+    //    int size = nums.size();
+    //    // cout<<size<<"ac"<<j<<endl;
+    //    for (int i = 0; i < size; i++)
+    //    {
+    //        for (int j = i + 1; j < size; j++)
+    //        {
+    //            int sum = nums[i] + nums[j];
+    //            if (sum == target)
+    //            {
+    //                result[0] = i;
+    //                result[1] = j;
+    //                return result;
+    //            }
+    //        }
+    //    }
+    //    return std::vector<int>();;
+    //}
+    
+    //哈希表
     vector<int> twoSum(vector<int>& nums, int target)
     {
-        // std::cout<<"mdl"<<std::endl;
         vector<int> result(2);
-        int size = nums.size();
-        // cout<<size<<"ac"<<j<<endl;
-        for (int i = 0; i < size; i++)
+        unordered_map<int, int> hashTable;
+        for (int i = 0; i < nums.size(); i++)
         {
-            for (int j = i + 1; j < size; j++)
-            {
-                int sum = nums[i] + nums[j];
-                if (sum == target)
-                {
-                    result[0] = i;
-                    result[1] = j;
-                    return result;
-                }
-            }
-
+            hashTable[nums[i]] = i;
+            //printf("%d %d->",hashTable.)
         }
-        return std::vector<int>();;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            int diff = target - nums[i];
+            auto it = hashTable.find(diff);
+            if (it != hashTable.end() && it->second != i)
+            {
+                result[0] = i;
+                result[1] = it->second;
+                return result;  // 找到结果后立即返回
+            }
+        }
+        return {};
     }
 };
+
 
 int main()
 {
